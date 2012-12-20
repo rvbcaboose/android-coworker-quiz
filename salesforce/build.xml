@@ -1,0 +1,78 @@
+<project name="coworker-quiz" default="validate" basedir="." xmlns:sf="antlib:com.salesforce">
+
+  <property file="local.properties"/>
+
+  <property name="src.dir" value="src"/>
+  <property name="manifest.file" value="manifest.xml"/>
+  <property name="package.file" value="package.xml"/>
+  <property name="retrieve.dir" value="retrieve"/>
+
+
+  <!-- Validate 'src' deploy -->
+  <target name="validateDeploy">
+    <echo message="Validating deploy:"/>
+    <echo message="   user = ${sf.username}"/>
+    <echo message="   project dir = ${src.dir}"/>
+    <echo message="   checkOnly = true"/>
+
+    <sf:deploy username="${sf.username}"
+               password="${sf.password}"
+               serverurl="${sf.serverurl}"
+               deployRoot="${src.dir}"
+               checkOnly="true">
+      <runTest>testCoWorkerQuizREST</runTest>
+    </sf:deploy>
+  </target>
+
+  <!-- Retrieve metadata based on manifest file -->
+  <target name="customRetrieve">
+    <echo message="Retrieve info:"/>
+    <echo message="  user = ${sf.username}"/>
+    <echo message="  Metadata = ${manifest.file}"/>
+    <echo message="  Destination = ${retrieve.dir}"/>
+    <delete dir="${retrieve.dir}"/>
+    <mkdir dir="${retrieve.dir}"/>
+
+    <sf:retrieve username="${sf.username}"
+                 password="${sf.password}"
+                 serverurl="${sf.serverurl}"
+                 retrieveTarget="${retrieve.dir}"
+                 unpackaged="${manifest.file}"/>
+  </target>
+
+  <!-- Deploy metadata recently retrieved -->
+  <target name="customDeploy">
+    <echo message="Deploy Unpackaged:"/>
+    <echo message="  user = ${sf.username}"/>
+    <echo message="  project dir = ${retrieve.dir}"/>
+
+    <sf:deploy username="${sf.username}"
+               password="${sf.password}"
+               serverurl="${sf.serverurl}"
+               deployRoot="${retrieve.dir}"/>
+  </target>
+
+  <!-- Deploy to dev sandbox from specified dev source dir -->
+  <target name="deployDev">
+    <echo message="Dev deploy:"/>
+    <echo message="  dev user = ${sf.dev.username}"/>
+    <echo message="  dev project dir = ${sf.dev.deploy.dir}"/>
+
+      <sf:deploy username="${sf.dev.username}"
+                 password="${sf.dev.password}"
+                 serverurl="${sf.dev.serverurl}"
+                 deployRoot="${sf.dev.deploy.dir}"/>
+  </target>
+
+  <!-- Deploy metadata recently retrieved -->
+  <target name="deploy">
+    <echo message="Deploy Source:"/>
+    <echo message="  user = ${sf.username}"/>
+    <echo message="  project dir = ${src.dir}"/>
+
+    <sf:deploy username="${sf.username}"
+               password="${sf.password}"
+               serverurl="${sf.serverurl}"
+               deployRoot="${src.dir}"/>
+  </target>
+</project>

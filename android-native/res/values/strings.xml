@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Co-Worker Quiz</string>
+  <string name="logout_button">Logout</string>
+  <string name="status_default">Do you have what it takes?</string>
+  <string name="status_correct">You are correct! This is&#160;</string>
+  <string name="status_wrong">Sorry! This is actually&#160;</string>
+  <string name="status_over">Game Over!</string>
+</resources>

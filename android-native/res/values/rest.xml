@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="account_type">com.appirio.android.samples</string>
+    <string name="oauth_callback_url">sfdc://success</string>
+    <!-- ? -->
+    <!--<string name="oauth_client_id">3MVG9QDx8IX8nP5TDfNNYnrOPj5I_yEl54BT7xtHT6spFX_XvFQvbV9NGU8N0N5C78V9RsPlLx32J..khWeim</string> -->
+    <!-- .mobquiz Consumer Key -->
+    <!--<string name="oauth_client_id">3MVG982oBBDdwyHhbNPOlNZ_ZQ3cmEqqasdgxjbnM1vt_s.QfraM34on1DzZT83aWTihJzPI2IHYI2hDLTT4E</string>-->
+
+    <!-- .full Consumer Key -->
+    <string name="oauth_client_id">3MVG982oBBDdwyHgSqc4_Zxusil6azj_XenTGU.X37xNZsEBVsdtQDd4LWgVpGVkrIb63wMP03L.8knvBRUIg</string>
+    <string name="api_version">v23.0</string>
+    <string name="encoding">UTF-8</string>
+</resources>

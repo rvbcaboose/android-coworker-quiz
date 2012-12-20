@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/ScrollView01" android:layout_width="wrap_content" android:layout_height="match_parent">
+  <TableLayout android:id="@+id/table"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_marginLeft="10dip"
+               android:layout_marginRight="10dip"
+               android:layout_marginTop="10dip"
+               android:layout_marginBottom="10dip"
+               android:stretchColumns="0">
+    <TableRow>
+      <TextView android:text="Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dip"
+                android:gravity="left"
+                style="@style/BoldTitle" />
+      <TextView android:text="High"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dip"
+                android:gravity="right"
+                style="@style/BoldTitle" />
+      <TextView android:text="Low" 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dip"
+                android:gravity="right"
+                style="@style/BoldTitle" />
+    </TableRow>
+    
+    <View android:layout_height="2dip"
+          android:background="#FF909090" />
+  </TableLayout>
+</ScrollView>

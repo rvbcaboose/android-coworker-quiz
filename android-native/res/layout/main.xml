@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/root" 
+            android:layout_width="wrap_content" 
+            android:layout_height="match_parent"
+            android:background="#454545" >
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    
+    <include layout="@layout/header" />
+    
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+      
+      <ImageView android:id="@+id/picture"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 style="@style/CenterImage"
+                 android:src="@drawable/f_logo" />
+      
+      <TextView
+          android:id="@+id/status_msg"
+          style="@style/Italic12sp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/picture"
+          android:layout_marginLeft="10dip"
+          android:layout_marginTop="10dip"
+          android:text="@string/status_default" />
+      
+      <Button android:id="@+id/guesswho"
+              style="@style/SmallButton"
+              android:layout_below="@id/status_msg"
+              android:layout_marginLeft="10dip"
+              android:layout_marginTop="10dip"
+              android:text="Guess Who?"
+              android:clickable="false"
+              android:onClick="doGuessWho" />
+      <Button android:id="@+id/leaderboard"
+              style="@style/SmallButton"
+              android:layout_toRightOf="@id/guesswho"
+              android:layout_alignTop="@id/guesswho"
+              android:layout_alignBottom="@id/guesswho"
+              android:text="Leaderboard"
+              android:onClick="doLeaderboard" />
+      <Button android:id="@+id/sendscore"
+              style="@style/SmallButton"
+              android:layout_toRightOf="@id/leaderboard"
+              android:layout_alignTop="@id/leaderboard"
+              android:layout_alignBottom="@id/leaderboard"
+              android:text="Send Score"
+              android:onClick="doSendScore" />
+      <Button android:id="@+id/quit"
+              style="@style/SmallButton"
+              android:layout_toRightOf="@id/sendscore"
+              android:layout_alignTop="@id/sendscore"
+              android:layout_alignBottom="@id/sendscore"
+              android:text="Quit" 
+              android:onClick="doQuit" />
+      
+      <TextView android:id="@+id/current_high"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:layout_below="@id/guesswho"
+                android:layout_marginLeft="10dip"
+                android:text="Current High: 0" />
+      
+      <TextView android:id="@+id/current_low"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:layout_below="@id/current_high"
+                android:layout_marginLeft="10dip"
+                android:text="Current Low:  0" />
+    </RelativeLayout>
+  </LinearLayout>
+</ScrollView>
+

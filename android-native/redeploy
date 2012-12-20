@@ -1,0 +1,4 @@
+# ant debug
+adb uninstall com.appirio.android.samples
+# adb install bin/coworker-quiz-debug.apk
+adb -d install bin/coworker-quiz-release.apk
